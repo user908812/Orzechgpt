@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrzechGPT - settings</title>
+    <link rel="icon" href="settings.png" type="image/x-icon">
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(43, 41, 41);
+        border: 1px solid #000;
+        border-radius: 10px;
+        max-width: 1000px;
+        color: white;
+        }
+        .top {
+            border-bottom: 1px solid grey;
+        }
+        button {
+            padding: 10px 30px;
+            min-width: 120px;
+            background-color: rgb(43, 41, 41);
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+        button:hover {
+            background-color: rgba(52,53,65,1);
+            filter: brightness(150%);
+        }
+        .middle {
+            margin-left: 200px;
+            margin-top: -55px;
+        }
+        #trybWyboru {
+            padding: 10px 30px;
+            min-width: 120px;
+            background-color: rgb(43, 41, 41);
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+        #trybWyboru:hover {
+            background-color: rgba(52,53,65,1);
+            filter: brightness(150%);
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h1>Ustawienia <img onclick="powrotDoPoprzedniejStrony()" style="background-color: transparent; margin-left: 740px; cursor: pointer;" width="40px" height="40px" src="x.png" alt="przycisk wyjścia"></h1>
+        <script>
+            document.getElementById('powrotButton').addEventListener('click', function() {
+            powrotDoPoprzedniejStrony();
+    });
+
+    function powrotDoPoprzedniejStrony() {
+        window.history.back();
+    }
+        </script>
+        <br>
+    </div>
+    <div class="left-bar">
+        <button style="cursor: pointer;" onclick="generalCategory();">Ogólne</button>
+        <br>
+        <button style="cursor: pointer;" onclick="controlCategory();">Kontrole danych</button>
+    </div>
+    <div class="middle">
+        <div class="category">
+            <select style="margin-left: 520px; cursor: pointer;" id="trybWyboru">
+                <option value="dark">Ciemny</option>
+                <option value="light">Jasny</option>
+            </select>
+            <button style="cursor: pointer;" id="zmienTrybBtn">Zmień motyw</button>
+            <hr>
+            <span><span style="text-align: center;">Zawsze rozwijaj wyjście kodu</span><img style="background-color: transparent; filter: brightness(200%); margin-left: 720px; cursor: pointer;" width="50" height="50" src="switch.png" alt="Switch"></span>
+            <hr>
+            <span>Zarchiwizowane czaty <span style="margin-left: 650px;"><button style="cursor: pointer; border: 1px solid rgb(100, 102, 122); background-color: rgba(52,53,65,1);" onclick="alert('Zarchiwizowane czaty: \nNie masz żadnych zarchiwizowanych rozmów.')">Zarządzaj</button></span></span>
+            <hr>
+            <span>Archiwizuj wszystkie czaty <span style="margin-left: 600px;"><button style="cursor: pointer; border: 1px solid rgb(100, 102, 122); background-color: rgba(52,53,65,1);" onclick="prompt('Zarchiwizuj historię czatów – czy na pewno? \nAnuluj / Potwierdź archiwum')">Zarchiwizuj wszystko</button></span></span>
+            <hr>
+            <span>Usuń wszystkie czaty <span style="margin-left: 620px;"><button style="cursor: pointer; border: none; background-color: rgb(185, 28, 28);" onclick="prompt('Wyczyść historię czatów – jesteś pewien? \nAnuluj / Potwierdź usunięcie')">Usuń wszystko</button></span></span>
+        </div>
+
+        <script>
+        document.getElementById('zmienTrybBtn').addEventListener('click', function() {
+                var trybWyboru = document.getElementById('trybWyboru').value;
+                localStorage.setItem('wybranyTryb', trybWyboru);
+                window.location.href = 'index.html';
+            });
+        
+            document.addEventListener('click', function(event) {
+                if (event.target.id === 'zmienTrybBtn') {
+                    var trybWyboru = document.getElementById('trybWyboru').value;
+                    localStorage.setItem('wybranyTryb', trybWyboru);
+
+                    document.getElementById('zmienTrybBtn').addEventListener('click', function() {
+            var trybWyboru = document.getElementById('trybWyboru').value;
+            localStorage.setItem('wybranyTryb', trybWyboru);
+            window.location.href = 'index.html';
+        });
+                }
+            });
+        
+            function generalCategory() {
+                let getCategory = document.querySelector('.category');
+                getCategory.innerHTML = '<select style="margin-left: 520px;" id="trybWyboru"><option value="dark">Ciemny</option><option value="light">Jasny</option></select><button id="zmienTrybBtn">Zmień motyw</button><hr><span><span style="text-align: center;">Zawsze rozwijaj wyjście kodu</span><img style="background-color: transparent; filter: brightness(200%); margin-left: 720px; cursor: pointer;" width="50" height="50" src="switch.png" alt="Switch"></span><hr><span>Zarchiwizowane czaty <span style="margin-left: 650px;"><button style="cursor: pointer; border: 1px solid rgb(100, 102, 122); background-color: rgba(52,53,65,1);" onclick="alert(\'Zarchiwizowane czaty: \\nNie masz żadnych zarchiwizowanych rozmów.\')">Zarządzaj</button></span></span><hr><span>Archiwizuj wszystkie czaty <span style="margin-left: 600px;"><button style="cursor: pointer; border: 1px solid rgb(100, 102, 122); background-color: rgba(52,53,65,1);" onclick="prompt(\'Zarchiwizuj historię czatów – czy na pewno? \\nAnuluj / Potwierdź archiwum\')">Zarchiwizuj wszystko</button></span></span><hr><span>Usuń wszystkie czaty <span style="margin-left: 620px;"><button style="cursor: pointer; border: none; background-color: rgb(185, 28, 28);" onclick="prompt(\'Wyczyść historię czatów – jesteś pewien? \\nAnuluj / Potwierdź usunięcie\')">Usuń wszystko</button></span></span>';
+            }
+        
+            function controlCategory() {
+                let getCategory = document.querySelector('.category');
+                getCategory.innerHTML = '<div class="category2"><span>Historia czatów i szkolenia <img style="background-color: transparent; filter: brightness(200%); margin-left: 720px;" width="50 cursor: pointer;" height="50" src="switch.png" alt="Switch"><br><span style="font-size: 12px; color: grey;">Zapisuj nowe czaty w tej przeglądarce w swojej historii i pozwalaj na ich wykorzystanie do ulepszania naszych modeli. Niezapisane czaty zostaną usunięte z naszych systemów w ciągu 30 dni. To ustawienie nie jest synchronizowane między przeglądarkami ani urządzeniami. <u>Dowiedz się więcej</u></span></span><hr><span>Udostępnione linki <span style="margin-left: 650px;"><button style="cursor: pointer; border: 1px solid rgb(100, 102, 122); background-color: rgba(52,53,65,1);" onclick="alert("")">Zarządzaj</button></span></span><hr><span>Eksportuj dane <span style="margin-left: 650px;"><button style="cursor: pointer; border: 1px solid rgb(100, 102, 122); background-color: rgba(52,53,65,1);" onclick="alert("")">Eksportuj</button></span></span><hr><span>Usuń konto <span style="margin-left: 650px;"><button style="cursor: pointer; border: none; background-color: rgb(185, 28, 28);" onclick="alert("")">Usuń</button></span></span></div>';
+            }
+        </script>
+    <br><br><br><br><br><br><br><br><br><br>
+    
+</body>
+</html>

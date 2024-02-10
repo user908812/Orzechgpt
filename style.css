@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgba(52,53,65,1);
+}
+.left-bar {
+    background-color: #000;
+    width: 300px;
+    height: 1880px;
+}
+.newChat img {
+    vertical-align: bottom;
+}
+.newChat span {
+    vertical-align: super;
+}
+.newChatBorder {
+    width: 292px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: #000;
+}
+.newChatBorder:hover {
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.today div {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.today div:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.caption {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: grey;
+    font-size: 20px;
+}
+.yesterday div {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.yesterday div:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.week div {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.week div:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.month div {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.month div:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.middle {
+    margin-left: 700px;
+    margin-top: 0;
+    
+}
+.grid {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.gptChoose {
+    position: absolute;
+    left: 320px;
+    top: 10px;
+}
+select {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    border: none;
+    background-color: rgba(52,53,65,1);
+    color: white;
+    cursor: pointer;
+}
+select:hover {
+    background-color: rgba(42,43,55,1);
+}
+.examples1and2 {
+    display: grid;
+    grid-template-columns: 340px 340px;
+}
+.example1 {
+    border: 1px outset;
+    padding: 10px;
+    border-radius: 10px;
+    width: 280px;
+    cursor: pointer;
+}
+.example2 {
+    border: 1px outset;
+    padding: 10px;
+    border-radius: 10px;
+    width: 280px;
+    cursor: pointer;
+}
+.examples3and4 {
+    display: grid;
+    grid-template-columns: 340px 340px;
+}
+.example3 {
+    border: 1px outset;
+    padding: 10px;
+    border-radius: 10px;
+    width: 280px;
+    cursor: pointer;
+}
+.example4 {
+    border: 1px outset;
+    padding: 10px;
+    border-radius: 10px;
+    width: 280px;
+    cursor: pointer;
+}
+textarea {
+    margin-top: 20px;
+    height: 30px;
+    width: 655px;
+    background-color: rgba(52,53,65,1);
+    border-radius: 10px;
+    padding: 10px;
+}

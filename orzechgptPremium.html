@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrzechGPT - premium</title>
+    <link rel="icon" href="star.png" type="image/x-icon">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-color: rgba(52,53,65,1);
+        border: 1px solid #000;
+        border-radius: 10px;
+        max-width: 1000px;
+    }
+    .plans {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: rgb(43, 41, 41);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .free{
+        border: 1px solid rgb(217, 217, 227);
+    }
+    .plus{
+        border: 1px solid rgb(217, 217, 227);
+    }
+    .team{
+        border: 1px solid rgb(217, 217, 227);
+    }
+    .plan-desc {
+        color: rgb(153, 153, 153);
+    }
+    button {
+        padding: 15px 60px;
+        border-radius: 10px;
+        border: none;
+        margin-left: 50px;
+    }
+    ul {
+        list-style-type: none;
+        text-align: center;
+    }
+    ul li {
+        width: 220px;
+    }
+    p {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Aktualizuj swój plan <img onclick="window.close()" style="background-color: transparent; margin-left: 570px; cursor: pointer;" width="40px" height="40px" src="x.png" alt="przycisk wyjścia"></h1>
+    <div class="plans">
+        <div class="free"><b class="planName"><h2>Darmowy</h2></b><br><br><span class="plan-desc">PLN 0zł/miesiąc</span><br><span><button style="margin-top: 20px; background-color: grey; color: rgb(65, 65, 65); cursor: not-allowed;">Twój aktualny plan</button></span>
+            <p>Dla osób dopiero rozpoczynających pracę z OrzechGPT</p>
+            <ul>
+                <li>✓ &nbsp;Nieograniczone wiadomości, interakcje i historia</li>
+                <li>✓ &nbsp;Dostęp do naszego modelu GPT-3.5</li>
+                <li>✓ &nbsp;Dostęp w Internecie, iOS i Androidzie<br><br><span style="color: grey; "><br><br><br><br><br><br><br> Masz już plan? Zobacz <u style="cursor: pointer;">pomoc dotyczącą rozliczeń</u></span></li>
+            </ul>
+        </div>
+        <div class="plus"><b class="planName"><h2><img style="background-color: transparent;" width="20" height="20" src="plus.png" alt="gpt plus logo"> Plus</h2></b><br><br><span class="plan-desc">PLN 100zł/miesiąc</span><br><span><button style="margin-top: 20px; background-color: rgb(26, 127, 100); cursor: pointer;">Aktualizuj do plusa</button></span>
+            <p>Wszystko za darmo i:</p>
+            <ul>
+                <li>✓ &nbsp;Dostęp do GPT-4, naszego najbardziej wydajnego modelu</li>
+                <li>✓ &nbsp;Przeglądaj, twórz i używaj GPT</li>
+                <li>✓ &nbsp;Dostęp do dodatkowych narzędzi, takich jak DALL·E, przeglądanie, zaawansowana analiza danych i nie tylko</li>
+            </ul>
+        </div>
+        <div class="team"><b class="planName"><h2><img style="background-color: transparent;" width="20" height="20" src="team.png" alt="gpt plus logo"> Drużyna</h2></b><br><br><span class="plan-desc">PLN 69000zł osobę/miesiąc</span><br><span><button style="margin-top: 20px; background-color: rgb(0, 102, 222); cursor: pointer;">Aktualizuj do drużyny</button></span>
+            <p>Wszystko w Plusie i:</p>
+            <ul>
+                <li>✓ &nbsp;Wyższe limity wiadomości w GPT-4 i narzędziach takich jak DALL·E, przeglądanie, zaawansowana analiza danych i nie tylko</li>
+                <li>✓ &nbsp;Twórz i udostępniaj GPT w swoim obszarze roboczym</li>
+                <li>✓ &nbsp;Konsola administracyjna do zarządzania obszarem roboczym</li>
+                <li>✓ &nbsp;Dane zespołu domyślnie wyłączone z treningu. <u style="cursor: pointer;">Dowiedz się więcej</u><br><br><span style="color: grey;">* Cena naliczana rocznie, minimum 2 użytkowników</span></li>
+            </ul>
+        </div>
+    </div>
+    <footer style="padding-top: 20px; padding-bottom: 20px; text-align: center;">
+        <p>Potrzebujesz więcej możliwości? Zobacz <u style="cursor: pointer;">OrzechGPT Przedsiębiorstwo</u></p>
+    </footer>
+</body>
+</html>

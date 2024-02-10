@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrzechGPT - Kamień papier nożyce</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var wybranyTryb = localStorage.getItem('wybranyTryb');
+            if (wybranyTryb === 'dark') {
+                document.body.style.backgroundColor = 'rgba(52,53,65,1)';
+                document.body.style.color = '#fff';
+            } else if (wybranyTryb === 'light') {
+                document.body.style.backgroundColor = '#fff';
+                document.body.style.color = 'grey';
+                let gptChooseMode = document.getElementsByClassName('gptChoose');
+                gptChooseMode.style.backgroundColor = "#fff";
+                gptChooseMode.style.color = "#000";
+            }
+            localStorage.removeItem('wybranyTryb');
+        });
+    </script>
+</head>
+<body>
+
+<div class="grid">
+    <div class="left-bar">
+        <div class="newChat">
+            <div onclick="window.open('index.html', '_parent')" class="newChatBorder"><img style="border-radius: 20px; margin-top: 10px; margin-left: 10px;" width="40" height="40" src="logo.png" alt="Orzechgpt Logo"><span> &nbsp; Nowy czat <span style="margin-left: 74px; vertical-align: bottom; background-color: transparent;" title="Nowy czat"><img width="25" height="25" src="newchat.png" alt="New chat icon"></span></span></div>
+        </div>
+        <div style="margin-bottom: 5px; margin-top: 25px;" class="caption">&nbsp;Dzisiaj</div>
+            <span class="today">
+                <div onclick="window.open('czymJestOrzechGPT.html', '_parent')">Czym jest OrzechGPT?<span style="vertical-align: super; margin-left: 20px;">…</span></div><br>
+                <div>Kamień, papier, nożyce<span style="vertical-align: super; margin-left: 20px;">…</span></div><br>
+            </span>
+            <div style="margin-bottom: 20px;" class="caption">&nbsp;Wczoraj</div>
+            <span class="yesterday">
+                <div>example 1<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 2<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 3<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 4<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 5<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+            </span>
+            <div style="margin-bottom: 20px;" class="caption">&nbsp;Ostatnie 7 Dni</div>
+            <span class="week">
+                <div>example 6<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 7<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 8<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+            </span>
+            <div style="margin-bottom: 20px;" class="caption">&nbsp;Ostatnie 30 Dni</div>
+            <span class="month">
+                <div>example 9<span style="vertical-align: super; margin-left: 145px;">…</span></div><br>
+                <div>example 10<span style="vertical-align: super; margin-left: 130px;">…</span></div><br>
+                <div>example 11<span style="vertical-align: super; margin-left: 130px;">…</span></div><br>
+                <div>example 12<span style="vertical-align: super; margin-left: 130px;">…</span></div><br>
+                <div>example 13<span style="vertical-align: super; margin-left: 130px;">…</span></div><br>
+                <div>example 14<span style="vertical-align: super; margin-left: 130px;">…</span></div><br>
+                <div>example 15<span style="vertical-align: super; margin-left: 130px;">…</span></div><br>
+                <div onclick="onPremiumButtonClick();"><span style="width: 300px;"><img style="border-radius: 20px;" width="40" height="40" src="star.png" alt="ikona Orzechgpt premium"><b style="vertical-align: super;">&nbsp; Aktualizuj plan</b><br><span style="font-size: 18px; color: grey;">Zdobądź OrzechGPT premium, DALL·E i więcej</span></span></div><br>
+                <div onclick="onSettingsButtonClick();"><img style="border-radius: 20px;" width="40" height="40" src="pfp.png" alt="Zdjecie profilowe"><span style="vertical-align: super;">&nbsp; xxxx xxxx</span></div><br>
+            </span>
+    </div>
+
+    <div class="middle">
+        <select class="gptChoose" name="gptChoose" id="gptChoose">
+            <option value="orzechgpt">OrzechGPT 3.5</option>
+            <option value="orzechgptpremium">OrzechGPT premium</option>
+        </select>
+
+        <div class="middle-items">
+            <div class="top">
+                <img style="margin-top: 300px; margin-left: 250px; border-radius: 55px;" width="120" height="120" src="logo.png" alt="Orzechgpt logo">
+                <h2 style="margin-left: 100px;">Jak mogę ci dzisiaj pomóc?</h2>
+            </div>
+        <div class="examples1and2">
+            <div class="example1" onclick="jokeGenerator();"><span style="font-weight: 400;">Opowiedz mi żart</span><br><span style="color: grey; font-size: 15px;">Opowiada ci żart na szybkie rozluźnienie atmosfery</span></div>
+            <div class="example2" onclick="colorPickerApp();"><span style="font-weight: 400;">Narzędzie do wybierania kolorów</span><br><span style="color: grey; font-size: 15px;">Napisz coś w stylu uruchom aplikację color picker</span></div>
+        </div>
+        <br>
+            <div class="examples3and4">
+                <div class="example3" onclick="mathFunc();"><span style="font-weight: 400;">Działania matematyczne</span><br><span style="color: grey; font-size: 15px;">Napisz: Wykonaj działanie matematyczne czy coś</span></div>
+                <div class="example4" onclick="rockPaperScissors();"><span style="font-weight: 400;">Kamień papier nożyce</span><br><span style="color: grey; font-size: 15px;">Aby zagrać w kamień, papier, nożyce, napisz coś w stylu: Zagrajmy w kpn</span></div>
+        </div>
+    </div>
+        <div class="textarea">
+            <textarea class="askgpt" name="ask" id="ask" cols="30" rows="1" placeholder="Wiadomość do OrzechGPT..."></textarea><button class="sendButton" onclick="sendMsg();" style="cursor: pointer; margin-left: 5px; width: 50px; height: 50px; vertical-align: super; background-color: grey; border: none; border-radius: 6px; font-size: 16px;">↑</button>
+            <div style="font-size: 16px; width: 610px;">
+                <br>
+                Witaj w klasycznej grze "Kamień, Papier, Nożyce"! To prosta, ale emocjonująca gra,<br>która wymaga szybkiego myślenia i strategii.
+                <br><br>
+                <b>Zasady gry:</b>
+                <ol>
+                    <li>Kamień pokonuje nożyce, gdyż tępi je.</li>
+                    <li>Nożyce pokonują papier, gdyż go tną.</li>
+                    <li>Papier pokonuje kamień, gdyż go owija.</li>
+                </ol>
+                <b>Jak grać:</b>
+                <ol>
+                    <li>Wybierz jedną z trzech opcji: kamień, papier lub nożyce.</li>
+                    <li>Twoim celem jest pokonać wybór przeciwnika, dostosowując swoje posunięcie do jego decyzji.</li>
+                    <li>Graj z przyjaciółmi lub z komputerem i zdobywaj punkty za każde zwycięstwo.</li>
+                </ol>
+                
+                <b>Zabawa dla wszystkich:</b><br>
+                Ta prosta gra jest świetnym sposobem na relaks, śmiech i rywalizację. Czy potrafisz przewidzieć ruchy przeciwnika i zwyciężyć w tej klasycznej rozgrywce?
+                <br><br>
+                Do dzieła! Spróbuj swoich sił w grze "Kamień, Papier, Nożyce" już teraz i zobacz, czy masz w sobie to, co potrzebne do zwycięstwa!
+            </div>
+        </div>
+        <p class="answer" style="width: 720px;"></p>
+        <p class="answer2" style="width: 720px;"></p>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
