@@ -35,12 +35,13 @@ function colorPickerApp() {
     container.style.height = '250px';
     container.style.padding = '20px';
     container.style.textAlign = 'center';
+    container.style.marginTop = '50px';
 
     let colorPickerSelector = document.createElement('input');
     colorPickerSelector.type = 'color';
     colorPickerSelector.name = 'colorPicker';
     colorPickerSelector.id = 'colorPicker';
-    colorPickerSelector.value = '#fff';
+    colorPickerSelector.value = '#3366cc';
 
     let label = document.createElement('label');
     label.htmlFor = 'colorPicker';
@@ -65,9 +66,10 @@ function colorPickerApp() {
     colorPickerSelector.addEventListener('input', function () {
         let valueOfColor = colorPickerSelector.value;
 
-        answer2Container.innerHTML = `<p>Twój wybrany kolor to: <span style="background-color: ${valueOfColor}; color: ${invertColor(valueOfColor)}">${valueOfColor}</span> </p>`;
+        answer2Container.innerHTML = `<p><span style="background-color: ${valueOfColor}; color: ${invertColor(valueOfColor)}">${valueOfColor}</span> to twój wybrany kolor.</p>`;
     });
 }
+
 function invertColor(hex) {
     hex = hex.slice(1);
     return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase();

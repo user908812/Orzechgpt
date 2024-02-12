@@ -74,11 +74,6 @@ body {
 .middle {
     margin-left: 700px;
     margin-top: 0;
-    
-}
-.grid {
-    display: grid;
-    grid-template-columns: 50px 1fr;
 }
 .gptChoose {
     position: absolute;
@@ -140,4 +135,16 @@ textarea {
     background-color: rgba(52,53,65,1);
     border-radius: 10px;
     padding: 10px;
+}
+@media (min-width: 320px) and (max-width: 600px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 5px 1fr;
+    }
+}
+@media (min-width: 601px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+    }
 }
